@@ -56,3 +56,10 @@ CREATE TABLE visits (
     date_of_visit DATE,
     PRIMARY KEY (vet_id, animal_id)
 );
+
+-- index for optimization
+CREATE INDEX CONCURRENTLY idx_animal_id ON visits (animal_id);
+
+CREATE INDEX visits_vet_id_index ON visits USING btree (vet_id);
+
+CREATE INDEX owners_owners_id_index ON owners USING btree(id);

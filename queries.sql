@@ -196,3 +196,8 @@ WHERE v.name = 'Maisy Smith'
 GROUP BY sp.name
 ORDER BY COUNT(a.species_id) DESC
 LIMIT 1;
+
+-- query ooptimization
+CREATE INDEX CONCURRENTLY idx_animal_id
+ON visits (animal_id);
+

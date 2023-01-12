@@ -30,3 +30,13 @@ CREATE TABLE treatments(
     type VARCHAR(300),
     name VARCHAR(300)
 );
+
+CREATE TABLE invoice_items (
+    id SERIAL NOT NULL,
+    PRIMARY KEY (id),
+    unit_price decimal,
+    quantity int,
+    total_price decimal,
+    FOREIGN KEY (invoice_id) REFERENCES invoice(id),
+    FOREIGN KEY (treatment_id) REFERENCES treatment(id)
+);

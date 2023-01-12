@@ -40,3 +40,9 @@ CREATE TABLE invoice_items (
     FOREIGN KEY (invoice_id) REFERENCES invoice(id),
     FOREIGN KEY (treatment_id) REFERENCES treatment(id)
 );
+
+CREATE TABLE medical_histories_treatments(
+medical_history_id INT REFERENCES medical_histories(id),
+treatments_id INT REFERENCES treatments(id)
+);
+

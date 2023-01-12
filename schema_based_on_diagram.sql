@@ -23,3 +23,10 @@ CREATE TABLE invoices (
     paid_at TIMESTAMP,
     FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
 );
+
+CREATE TABLE treatments(
+    id SERIAL NOT NULL,
+    PRIMARY KEY (id),
+    type VARCHAR(300),
+    name VARCHAR(300)
+);
